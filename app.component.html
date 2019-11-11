@@ -1,0 +1,35 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>  
+
+  Serach By Country <input type="text" id="userIdFirstWay" list="dynmicUserIds" (change)="getCountryDetailByname($event.target.value)" />
+  <datalist id="dynmicUserIds">
+      <option *ngFor="let item of countries" [value]="item.name">{{item.name}}</option>
+  </datalist>
+ 
+  <table class="table">
+      <thead>
+          <tr>
+            <th>Name</th>
+            <th>flag</th>
+            <th>Capital</th>
+            <th>Region</th>
+            <th>SubRegion</th>
+            <th>Population</th>
+            <th>Area</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of country">
+            <td>{{country.name}}</td>
+            <td><img src="{{country.flag}}" width="50px" /></td>
+            <td>{{country.capital}}</td>
+            <td>{{country.region}}</td>
+            <td>{{country.subregion}}</td>
+            <td>{{country.population}}</td>
+            <td>{{country.area}}</td>
+          </tr>
+        </tbody>  
+  </table>
+</div>
+
+
